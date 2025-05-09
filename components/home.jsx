@@ -1,11 +1,14 @@
 "use client";
-import React from "react";
+import { useEffect, useState } from "react";
 import Contactform from "@/components/ui/contactform";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Carousel, IconButton } from "@material-tailwind/react";
 import { useRouter } from "next/navigation";
+
+import dynamic from "next/dynamic";
+const HeroVideo = dynamic(() => import("./videocontainer"), { ssr: false });
 
 const Home = () => {
   const router = useRouter();
@@ -29,11 +32,11 @@ const Home = () => {
           muted
           playsInline
         >
-          <source src="/assets/vids/construction-hero.mp4" type="video/mp4" />
+          <source src="/assets/vids/homepage_vid.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className="md:px-14 ml-6 relative z-10 flex items-center justify-start h-full text-white">
-          <h1 className="text-3xl md:text-7xl font-bold">
+        <div className=" md:px-14  ml-6 relative z-10 flex items-center justify-start h-full text-white">
+          <h1 className="text-3xl md:text-7xl font-bold ">
             <div className="mb-6">
               Building <span className="text-[#FFA500]">Excellence</span>
             </div>
@@ -55,32 +58,8 @@ const Home = () => {
         <div className="p-2 md:p-5 grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-8">
           {/* Card 1: Civil Contract Services */}
           <div
-            className="border-[1px] border-orange-500 border-opacity-25 cursor-pointer p-5 md:px-7 xl:px-10 rounded-[20px] bg-white shadow-md hover:shadow-lg group relative shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2"
-            onClick={() => router.push("/services/civil-contract")}
-          >
-            <div className="w-[40px] md:w-[70px] h-[40px] md:h-[70px] flex items-center justify-center bg-orange-400 rounded-xl md:rounded-2xl mb-8">
-              <svg
-                className="h-[35px] md:h-[48px] w-[35px] md:w-[48px]"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 -960 960 960"
-                fill="#FFFFFF"
-              >
-                <path d="M180-80q-24 0-42-18t-18-42v-680q0-24 18-42t42-18h600q24 0 42 18t18 42v680q0 24-18 42t-42 18H180Zm0-60h600v-680H180v680Zm120-120h360v-60H300v60Zm0-120h360v-60H300v60Zm0-120h360v-60H300v60Z" />
-              </svg>
-            </div>
-            <h4 className="font-semibold text-base md:text-xl text-gray-900 mb-3">
-              Civil Contract Services
-            </h4>
-            <p className="text-gray-900 text-sm md:text-base">
-              From homes to commercial buildings, we deliver strong, reliable,
-              and safe structures.
-            </p>
-          </div>
-
-          {/* Card 2: Plumbing Contract Services */}
-          <div
-            className="border-[1px] border-orange-500 border-opacity-25 cursor-pointer p-5 md:px-7 xl:px-10 rounded-[20px] bg-white shadow-md hover:shadow-lg group relative shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2"
-            onClick={() => router.push("/services/plumbing-contract")}
+            className=" border-[1px] border-orange-500 border-opacity-25 cursor-pointer p-5 md:px-7 xl:px-10 rounded-[20px] bg-white shadow-md hover:shadow-lg group relative shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2"
+            onClick={() => router.push("/services/mould-trail")}
           >
             <div className="w-[40px] md:w-[70px] h-[40px] md:h-[70px] flex items-center justify-center bg-orange-400 rounded-xl md:rounded-2xl mb-8">
               <svg
@@ -126,8 +105,8 @@ const Home = () => {
 
           {/* Card 4: Commercial & Office Services */}
           <div
-            className="border-[1px] border-orange-500 border-opacity-25 cursor-pointer p-5 md:px-7 xl:px-10 rounded-[20px] bg-white shadow-md hover:shadow-lg group relative shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2"
-            onClick={() => router.push("/services/commercial-office")}
+            className=" border-[1px] border-orange-500 border-opacity-25 cursor-pointer p-5 md:px-7 xl:px-10 rounded-[20px] bg-white shadow-md hover:shadow-lg group relative shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2"
+            onClick={() => router.push("/services/mass-production")}
           >
             <div className="w-[40px] md:w-[70px] h-[40px] md:h-[70px] flex items-center justify-center bg-orange-400 rounded-xl md:rounded-2xl mb-8">
               <svg
@@ -149,8 +128,8 @@ const Home = () => {
 
           {/* Card 5: Hotel & Restaurant Services */}
           <div
-            className="border-[1px] border-orange-500 border-opacity-25 cursor-pointer p-5 md:px-7 xl:px-10 rounded-[20px] bg-white shadow-md hover:shadow-lg group relative shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2"
-            onClick={() => router.push("/services/hotel-restaurant")}
+            className=" border-[1px] border-orange-500 border-opacity-25 cursor-pointer p-5 md:px-7 xl:px-10 rounded-[20px] bg-white shadow-md hover:shadow-lg group relative shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2"
+            onClick={() => router.push("/services/custom-product-development")}
           >
             <div className="w-[40px] md:w-[70px] h-[40px] md:h-[70px] flex items-center justify-center bg-orange-400 rounded-xl md:rounded-2xl mb-8">
               <svg

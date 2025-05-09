@@ -12,18 +12,18 @@ const Contactform = () => {
     formState: { errors },
   } = useForm();
 
-  const textareaRef = useRef(null);
+  // const textareaRef = useRef(null);
 
-  const handleResize = () => {
-    if (textareaRef.current) {
-      textareaRef.current.style.height = "auto";
-      textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
-    }
-  };
+  // const handleResize = () => {
+  //   if (textareaRef.current) {
+  //     textareaRef.current.style.height = "auto";
+  //     textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
+  //   }
+  // };
 
-  useEffect(() => {
-    handleResize();
-  }, []);
+  // useEffect(() => {
+  //   handleResize();
+  // }, []);
 
   const onSubmit = async (formData) => {
     console.log("Form Data Submitted:", formData);
@@ -165,24 +165,38 @@ const Contactform = () => {
           className="w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 text-sm outline-[#FFA500] focus:bg-white"
           {...register("company")}
         />
+
         <input
           id="phone_no"
           name="Phone_no"
           type="tel"
           placeholder="Phone number"
           className="w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 text-sm outline-[#FFA500] focus:bg-white"
-          {...register("phone_no", { required: "Phone no. is required" })}
+          maxLength={10}
+          {...register("phone_no", {
+            required: "Phone no. is required",
+            pattern: {
+              value: /^\d{10}$/,
+              message: "Phone number must be 10 digits and only numbers",
+            },
+          })}
         />
+
+        {/* Error Message */}
+        {errors.phone_no && (
+          <p className="text-red-500 text-xs">{errors.phone_no.message}</p>
+        )}
+
         <div>
           <textarea
             id="description"
             name="description"
             placeholder="Message"
-            rows="1" // Set to 1 initially, will resize dynamically
+            rows="4"
             className="resize-none w-full rounded-md px-4 bg-gray-100 text-gray-800 text-sm pt-3 outline-[#FFA500] focus:bg-white min-h-[45px]"
             {...register("description")}
-            ref={textareaRef} // Add the reference to the textarea
-            onInput={handleResize} // Call the resize function on input
+            // ref={textareaRef}
+            // onInput={handleResize}
           ></textarea>
           {errors.description && (
             <p className="text-red-500 text-xs">{errors.description.message}</p>

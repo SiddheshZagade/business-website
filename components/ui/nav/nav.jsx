@@ -37,7 +37,7 @@ const Navbar = () => {
           ? isScrolled
             ? "bg-white shadow-lg"
             : "bg-transparent"
-          : "bg-white border-b-[1px] border-gray-300 " // Default to white background on other pages
+          : "bg-white border-b-[1px] border-gray-500 " // Default to white background on other pages
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -275,29 +275,30 @@ const NavItem = ({ title, items, href, isHomePage, isScrolled }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {isClickable ? (
+      {items ? (
         <Link
           href={href || "#"}
-          className={`${
-            isHomePage && !isScrolled
-              ? "text-white" // Make text white on the homepage when not scrolled
-              : "text-gray-700"
-          } px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-            title === "Contact Us"
-              ? "hover:bg-orange-500 hover:text-white"
-              : "hover:bg-black hover:text-white"
-          } ${isHomePage && !isScrolled ? "hover:bg-transparent" : ""}`}
+          aria-haspopup="true"
+          aria-expanded={isHovered}
+          className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+            isHomePage && !isScrolled ? "text-white" : "text-gray-700"
+          } hover:bg-orange-600 hover:text-white ${
+            !href ? "cursor-default" : "cursor-pointer"
+          }`}
         >
           {title}
         </Link>
       ) : (
-        <span
-          className={`${
+        <Link
+          href={href}
+          className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
             isHomePage && !isScrolled ? "text-white" : "text-gray-700"
-          } px-3 py-2 rounded-md text-sm font-medium`}
+          } hover:bg-orange-600 hover:text-white ${
+            !href ? "cursor-default" : "cursor-pointer"
+          }`}
         >
           {title}
-        </span>
+        </Link>
       )}
       <AnimatePresence>
         {isHovered && items && (
