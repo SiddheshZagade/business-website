@@ -3,18 +3,18 @@ import React from "react";
 import Contactform from "@/components/ui/contactform";
 import Link from "next/link";
 import Image from "next/image";
-import { Tabs } from "@/components/ui/tabs/tabs";
 import { motion } from "framer-motion";
 import { Carousel, IconButton } from "@material-tailwind/react";
-import ServicesCardGrid from "./servicesCardGrid";
 import { useRouter } from "next/navigation";
 
 const Home = () => {
   const router = useRouter();
+
   return (
-    <div className="flex flex-col items-center bg-white max-w-full ">
+    <div className="flex flex-col items-center bg-white max-w-full">
+      {/* Hero Section */}
       <div
-        className=" border-b-[1px] border-white relative w-full  h-96 md:h-[75vh]  max-h-96 md:max-h-[720px]  overflow-hidden custom-cursor"
+        className="border-b-[1px] border-white relative w-full h-96 md:h-[75vh] max-h-96 md:max-h-[720px] overflow-hidden custom-cursor"
         onClick={() => {
           const targetSection = document.getElementById("target-section");
           if (targetSection) {
@@ -29,156 +29,260 @@ const Home = () => {
           muted
           playsInline
         >
-          <source src="/assets/vids/homepage_vid.mp4" type="video/mp4" />
+          <source src="/assets/vids/construction-hero.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className=" md:px-14  ml-6 relative z-10 flex items-center justify-start h-full text-white">
-          <h1 className="text-3xl md:text-7xl font-bold ">
+        <div className="md:px-14 ml-6 relative z-10 flex items-center justify-start h-full text-white">
+          <h1 className="text-3xl md:text-7xl font-bold">
             <div className="mb-6">
-              We <span className="text-[#FFA500]">Manufacture</span>{" "}
+              Building <span className="text-[#FFA500]">Excellence</span>
             </div>
             <div>
-              to support <span className="text-[#FFA500]">innovation!</span>
+              Across <span className="text-[#FFA500]">India</span>
             </div>
           </h1>
         </div>
         <div id="target-section"></div>
       </div>
 
-      <div className=" h-full px-2 md:px-14">
-        {/* Services Main div */}
-        <div className="  mt-4 w-full text-gray-900 font-medium text-3xl md:text-5xl p-5 text-center md:text-left">
-          Our Services:
+      {/* Services Section */}
+      <div className="h-full px-2 md:px-14">
+        <div className="mt-4 w-full text-gray-900 font-medium text-3xl md:text-5xl p-5 text-center md:text-left">
+          Our Services
         </div>
 
-        {/* Services Cards here */}
-        <div className=" p-2 md:p-5 grid grid-cols-2 md:grid-cols-4  gap-2 md:gap-8 ">
-          {/* Card 1 */}
+        {/* Services Cards */}
+        <div className="p-2 md:p-5 grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-8">
+          {/* Card 1: Civil Contract Services */}
           <div
-            className=" border-[1px] border-orange-500 border-opacity-25 cursor-pointer p-5 md:px-7 xl:px-10 rounded-[20px] bg-white shadow-md hover:shadow-lg group relative shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2"
-            onClick={() => router.push("/services/mould-trail")}
+            className="border-[1px] border-orange-500 border-opacity-25 cursor-pointer p-5 md:px-7 xl:px-10 rounded-[20px] bg-white shadow-md hover:shadow-lg group relative shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2"
+            onClick={() => router.push("/services/civil-contract")}
           >
-            <div className=" w-[40px] md:w-[70px] h-[40px] md:h-[70px] flex items-center justify-center bg-orange-400 rounded-xl md:rounded-2xl mb-8">
+            <div className="w-[40px] md:w-[70px] h-[40px] md:h-[70px] flex items-center justify-center bg-orange-400 rounded-xl md:rounded-2xl mb-8">
               <svg
-                className=" h-[35px] md:h-[48px] w-[35px] md:w-[48px]"
+                className="h-[35px] md:h-[48px] w-[35px] md:w-[48px]"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 -960 960 960"
                 fill="#FFFFFF"
               >
-                <path d="M356-120H180q-24 0-42-18t-18-42v-176q44-5 75.5-34.5T227-463q0-43-31.5-72.5T120-570v-176q0-24 18-42t42-18h177q11-40 39.5-67t68.5-27q40 0 68.5 27t39.5 67h173q24 0 42 18t18 42v173q40 11 65.5 41.5T897-461q0 40-25.5 67T806-356v176q0 24-18 42t-42 18H570q-5-48-35.5-77.5T463-227q-41 0-71.5 29.5T356-120Zm-176-60h130q25-61 69.89-84t83-23Q501-287 546-264t70 84h130v-235h45q20 0 33-13t13-33q0-20-13-33t-33-13h-45v-239H511v-48q0-20-13-33t-33-13q-20 0-33 13t-13 33v48H180v130q48.15 17.82 77.58 59.69Q287-514.45 287-462.78 287-412 257.5-370T180-310v130Zm285-281Z" />
-              </svg>
-            </div>
-            <h4 className="font-semibold text-base md:text-xl text-gray-900 mb-3 ">
-              Mould Trial&gt;
-            </h4>
-            <p className="text-gray-900  text-sm md:text-base">
-              Ensure flawless production with our expert mould trial services
-              today.
-            </p>
-          </div>
-
-          {/* Card 2 */}
-          <div
-            className=" border-[1px] border-orange-500 border-opacity-25 cursor-pointer p-5 md:px-7 xl:px-10 rounded-[20px] bg-white shadow-md hover:shadow-lg group relative shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2"
-            onClick={() => router.push("/services/mass-production")}
-          >
-            <div className=" w-[40px] md:w-[70px] h-[40px] md:h-[70px] flex items-center justify-center bg-orange-400 rounded-xl md:rounded-2xl mb-8">
-              <svg
-                className=" h-[35px] md:h-[48px] w-[35px] md:w-[48px]"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 -960 960 960"
-                fill="#FFFFFF"
-              >
-                <path d="M201-120q-50 0-85-35t-35-85q0-50 35-85t85-35h560q50 0 85 35t35 85q0 50-35 85t-85 35H201Zm0-60h560q25.5 0 42.75-17.25T821-240q0-25.5-17.25-42.75T761-300H201q-25.5 0-42.75 17.25T141-240q0 25.5 17.25 42.75T201-180Zm190-260q-12.75 0-21.37-8.63Q361-457.25 361-470v-340q0-12.75 8.63-21.38Q378.25-840 391-840h340q12.75 0 21.38 8.62Q761-822.75 761-810v340q0 12.75-8.62 21.37Q743.75-440 731-440H391Zm30-60h280v-280H421v280ZM79-530v-60h221v60H79Zm401-120h162v-60H480v60Zm-319 0h147v-60H161v60Zm260 150v-280 280Z" />
+                <path d="M180-80q-24 0-42-18t-18-42v-680q0-24 18-42t42-18h600q24 0 42 18t18 42v680q0 24-18 42t-42 18H180Zm0-60h600v-680H180v680Zm120-120h360v-60H300v60Zm0-120h360v-60H300v60Zm0-120h360v-60H300v60Z" />
               </svg>
             </div>
             <h4 className="font-semibold text-base md:text-xl text-gray-900 mb-3">
-              Mass Production&gt;
+              Civil Contract Services
             </h4>
-            <p className="text-gray-900  text-sm md:text-base">
-              Reliable and scalable mass production solutions for high-quality
-              manufacturing.
+            <p className="text-gray-900 text-sm md:text-base">
+              From homes to commercial buildings, we deliver strong, reliable,
+              and safe structures.
             </p>
           </div>
 
-          {/* Card 3 */}
+          {/* Card 2: Plumbing Contract Services */}
           <div
-            className=" border-[1px] border-orange-500 border-opacity-25 cursor-pointer p-5 md:px-7 xl:px-10 rounded-[20px] bg-white shadow-md hover:shadow-lg group relative shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2"
-            onClick={() => router.push("/services/custom-product-development")}
+            className="border-[1px] border-orange-500 border-opacity-25 cursor-pointer p-5 md:px-7 xl:px-10 rounded-[20px] bg-white shadow-md hover:shadow-lg group relative shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2"
+            onClick={() => router.push("/services/plumbing-contract")}
           >
-            <div className=" w-[40px] md:w-[70px] h-[40px] md:h-[70px] flex items-center justify-center bg-orange-400 rounded-xl md:rounded-2xl mb-8">
+            <div className="w-[40px] md:w-[70px] h-[40px] md:h-[70px] flex items-center justify-center bg-orange-400 rounded-xl md:rounded-2xl mb-8">
               <svg
-                className=" h-[35px] md:h-[48px] w-[35px] md:w-[48px]"
+                className="h-[35px] md:h-[48px] w-[35px] md:w-[48px]"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 -960 960 960"
                 fill="#FFFFFF"
               >
-                <path d="m357-513 90-90-75-75-48 48-42-42 48-48-75-74-90 90 192 191Zm346 348 90-91-75-75-48 48-42-42 48-48-74-74-90 90 191 192Zm8-615 70 70-70-70ZM276-120H120v-156l194-194L80-704l174-176 236 235 178-178q9-9 20-13t22-4q11 0 22 4t20 13l71 71q9 9 13 20t4 22q0 11-4 22t-13 20L645-490l235 235L705-81 471-315 276-120Zm-96-60h70l393-394-70-70-393 394v70Zm428-429-35-35 70 70-35-35Z" />
+                <path d="M360-80q-33 0-56.5-23.5T280-160v-160q0-33 23.5-56.5T360-400h240q33 0 56.5 23.5T680-320v160q0 33-23.5 56.5T600-80H360Zm0-60h240v-160H360v160Zm-240-340q-33 0-56.5-23.5T40-560v-160q0-33 23.5-56.5T120-800h240q33 0 56.5 23.5T440-720v160q0 33-23.5 56.5T360-480H120Zm0-60h240v-160H120v160Zm480-340q-33 0-56.5-23.5T520-880v-160q0-33 23.5-56.5T600-960h240q33 0 56.5 23.5T920-880v160q0 33-23.5 56.5T840-640H600Zm0-60h240v-160H600v160Z" />
               </svg>
             </div>
             <h4 className="font-semibold text-base md:text-xl text-gray-900 mb-3">
-              Custom Product Development&gt;
+              Plumbing Contract Services
             </h4>
-            <p className="text-gray-900  text-sm md:text-base">
-              Transform ideas into reality with our expert custom product
-              development services for injection moulded parts.
+            <p className="text-gray-900 text-sm md:text-base">
+              Expert installation, repair, and maintenance for efficient
+              plumbing systems.
             </p>
           </div>
 
-          {/* Card 4 */}
+          {/* Card 3: Residential Services */}
           <div
-            className=" border-[1px] border-orange-500 border-opacity-30 cursor-pointer p-5 md:px-7 xl:px-10 rounded-[20px] bg-white  group relative shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2"
-            onClick={() => router.push("/services/mould-manufacturing")}
+            className="border-[1px] border-orange-500 border-opacity-25 cursor-pointer p-5 md:px-7 xl:px-10 rounded-[20px] bg-white shadow-md hover:shadow-lg group relative shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2"
+            onClick={() => router.push("/services/residential")}
           >
-            <div className=" w-[40px] md:w-[70px] h-[40px] md:h-[70px] flex items-center justify-center bg-orange-400 rounded-xl md:rounded-2xl mb-8">
+            <div className="w-[40px] md:w-[70px] h-[40px] md:h-[70px] flex items-center justify-center bg-orange-400 rounded-xl md:rounded-2xl mb-8">
               <svg
-                className=" h-[35px] md:h-[48px] w-[35px] md:w-[48px]"
+                className="h-[35px] md:h-[48px] w-[35px] md:w-[48px]"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 -960 960 960"
                 fill="#FFFFFF"
               >
-                <path d="M220-80q-23 0-41.5-18T160-140v-680q0-23 18.5-41.5T220-880h580v60H693v60q0 14-12.5 27T654-720H368q-14 0-26.5-13T329-760v-60H220v680h188q-38-26-58.5-63T329-293v-193h364v193q0 53-21 90t-59 63h187v60H220Zm290.5-86q51.5 0 87-37.04T633-293v-133H389v133q0 52.92 35 89.96Q459-166 510.5-166Zm-.5-394q16.58 0 27.79-11.21T549-599q0-16.58-11.21-27.79T510-638q-16.58 0-27.79 11.21T471-599q0 16.58 11.21 27.79T510-560Zm1 134Z" />
+                <path d="M180-120v-360h-60v-360h360v360h-60v360H180Zm60-60h120v-360h120v-240H240v240h120v360Zm480 0v-480H540v-180h360v660H720Zm-60-60h120v-540H660v540Zm-420-300Zm420-120Z" />
               </svg>
             </div>
             <h4 className="font-semibold text-base md:text-xl text-gray-900 mb-3">
-              Mould Manufacturing&gt;
+              Residential Services
             </h4>
-            <p className="text-gray-900  text-sm md:text-base">
-              Precision-engineered mould manufacturing for seamless and
-              efficient production.
+            <p className="text-gray-900 text-sm md:text-base">
+              Building and renovating homes for comfort and functionality.
+            </p>
+          </div>
+
+          {/* Card 4: Commercial & Office Services */}
+          <div
+            className="border-[1px] border-orange-500 border-opacity-25 cursor-pointer p-5 md:px-7 xl:px-10 rounded-[20px] bg-white shadow-md hover:shadow-lg group relative shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2"
+            onClick={() => router.push("/services/commercial-office")}
+          >
+            <div className="w-[40px] md:w-[70px] h-[40px] md:h-[70px] flex items-center justify-center bg-orange-400 rounded-xl md:rounded-2xl mb-8">
+              <svg
+                className="h-[35px] md:h-[48px] w-[35px] md:w-[48px]"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 -960 960 960"
+                fill="#FFFFFF"
+              >
+                <path d="M120-120v-720h720v720H120Zm60-60h600v-600H180v600Zm120-120h360v-60H300v60Zm0-120h360v-60H300v60Zm0-120h360v-60H300v60Z" />
+              </svg>
+            </div>
+            <h4 className="font-semibold text-base md:text-xl text-gray-900 mb-3">
+              Commercial & Office
+            </h4>
+            <p className="text-gray-900 text-sm md:text-base">
+              Tailored construction and plumbing for business spaces.
+            </p>
+          </div>
+
+          {/* Card 5: Hotel & Restaurant Services */}
+          <div
+            className="border-[1px] border-orange-500 border-opacity-25 cursor-pointer p-5 md:px-7 xl:px-10 rounded-[20px] bg-white shadow-md hover:shadow-lg group relative shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2"
+            onClick={() => router.push("/services/hotel-restaurant")}
+          >
+            <div className="w-[40px] md:w-[70px] h-[40px] md:h-[70px] flex items-center justify-center bg-orange-400 rounded-xl md:rounded-2xl mb-8">
+              <svg
+                className="h-[35px] md:h-[48px] w-[35px] md:w-[48px]"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 -960 960 960"
+                fill="#FFFFFF"
+              >
+                <path d="M120-120v-720h720v720H120Zm60-60h600v-600H180v600Zm240-120h120v-360H420v360Zm-240 0h120v-360H180v360Zm480 0h120v-360H660v360Z" />
+              </svg>
+            </div>
+            <h4 className="font-semibold text-base md:text-xl text-gray-900 mb-3">
+              Hotel & Restaurant
+            </h4>
+            <p className="text-gray-900 text-sm md:text-base">
+              High-quality solutions for hospitality spaces.
+            </p>
+          </div>
+
+          {/* Card 6: Industrial Services */}
+          <div
+            className="border-[1px] border-orange-500 border-opacity-25 cursor-pointer p-5 md:px-7 xl:px-10 rounded-[20px] bg-white shadow-md hover:shadow-lg group relative shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2"
+            onClick={() => router.push("/services/industrial")}
+          >
+            <div className="w-[40px] md:w-[70px] h-[40px] md:h-[70px] flex items-center justify-center bg-orange-400 rounded-xl md:rounded-2xl mb-8">
+              <svg
+                className="h-[35px] md:h-[48px] w-[35px] md:w-[48px]"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 -960 960 960"
+                fill="#FFFFFF"
+              >
+                <path d="M120-120v-720h720v720H120Zm60-60h600v-600H180v600Zm120-120h360v-360H300v360Z" />
+              </svg>
+            </div>
+            <h4 className="font-semibold text-base md:text-xl text-gray-900 mb-3">
+              Industrial Services
+            </h4>
+            <p className="text-gray-900 text-sm md:text-base">
+              Robust construction and plumbing for factories and warehouses.
             </p>
           </div>
         </div>
       </div>
 
-      {/* <div className="w-full h-auto grid grid-cols-1 md:grid-cols-4 gap-5 p-6 text-2xl">
-        <Link
-          href={"services/mould-trail"}
-          className="flex flex-col border-white border-[1px] gap-4 p-2 md:p-4 rounded-xl text-center hover:bg-white hover:text-black text-base md:text-2xl"
-        >
-          <div>Mould Trial</div>
-        </Link>
-        <Link
-          href={"services/mass-production"}
-          className="flex flex-col border-white border-[1px] gap-4 p-2 md:p-4 rounded-xl text-center hover:bg-white hover:text-black text-base md:text-2xl"
-        >
-          <div>Mass Production</div>
-        </Link>
-        <Link
-          href={"services/custom-product-development"}
-          className="flex flex-col border-white border-[1px] gap-4 p-2 md:p-4 rounded-xl text-center hover:bg-white hover:text-black text-base md:text-2xl"
-        >
-          <div>Custom Product Development</div>
-        </Link>
-        <Link
-          href={"services/mould-manufacturing"}
-          className="flex flex-col border-white border-[1px] gap-4 p-2 md:p-4 rounded-xl text-center hover:bg-white hover:text-black text-base md:text-2xl"
-        >
-          <div>Mould Manufacturing</div>
-        </Link>
-      </div> */}
+      {/* Core Values Section */}
+      <div className="w-full py-8 bg-gray-100">
+        <div className="px-2 md:px-14">
+          <h3 className="text-2xl md:text-4xl font-semibold text-center mb-6">
+            Our Core Values
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Core Value 1: On-Time Delivery */}
+            <div className="p-6 bg-white rounded-[20px] shadow-md">
+              <h4 className="font-semibold text-xl text-gray-900 mb-3">
+                On-Time Delivery
+              </h4>
+              <p className="text-gray-900 text-base">
+                We prioritize meeting deadlines without compromising quality,
+                ensuring your project stays on track.
+              </p>
+            </div>
 
-      <div className=" w-full h-500 md:h-[800px] mt-4  ">
+            {/* Core Value 2: Superior Finishing */}
+            <div className="p-6 bg-white rounded-[20px] shadow-md">
+              <h4 className="font-semibold text-xl text-gray-900 mb-3">
+                Superior Finishing
+              </h4>
+              <p className="text-gray-900 text-base">
+                Every detail is polished to perfection, delivering a
+                professional and flawless outcome.
+              </p>
+            </div>
+
+            {/* Core Value 3: Exceptional Quality */}
+            <div className="p-6 bg-white rounded-[20px] shadow-md">
+              <h4 className="font-semibold text-xl text-gray-900 mb-3">
+                Exceptional Quality
+              </h4>
+              <p className="text-gray-900 text-base">
+                We use top-tier materials and techniques for durable,
+                high-performing results.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* About Us Section */}
+      <div className="w-full py-8">
+        <div className="px-2 md:px-14">
+          <h3 className="text-2xl md:text-4xl font-semibold text-center mb-6">
+            About Dezire Construction Co.
+          </h3>
+          <p className="text-gray-900 text-base md:text-lg text-center max-w-3xl mx-auto">
+            Founded by Zulfikar Ali Abdi, Dezire Construction Co. brings over 15
+            years of expertise in civil and plumbing services. We are committed
+            to delivering exceptional craftsmanship across Mumbai and India,
+            building trust through quality, transparency, and reliability.
+            Whether residential, commercial, or industrial, we turn your vision
+            into reality with precision and professionalism.
+          </p>
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+            <div>
+              <h4 className="font-semibold text-xl text-gray-900 mb-2">
+                15 Years of Expertise
+              </h4>
+              <p className="text-gray-900">
+                Extensive knowledge and skill in every project.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-xl text-gray-900 mb-2">
+                Quality Assurance
+              </h4>
+              <p className="text-gray-900">
+                Finest materials and methods for superior results.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-xl text-gray-900 mb-2">
+                Customer-Centric
+              </h4>
+              <p className="text-gray-900">
+                Your satisfaction is our priority, always.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Carousel Section */}
+      <div className="w-full h-500 md:h-[800px] mt-4">
         <Carousel
           autoplay="true"
           prevArrow={({ handlePrev }) => (
@@ -187,7 +291,7 @@ const Home = () => {
               color="white"
               size="lg"
               onClick={handlePrev}
-              className=" invisible md:visible !absolute top-2/4 left-14 -translate-y-2/4 bg-[#FFA500] hover:bg-orange-700"
+              className="invisible md:visible !absolute top-2/4 left-14 -translate-y-2/4 bg-[#FFA500] hover:bg-orange-700"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -211,7 +315,7 @@ const Home = () => {
               color="white"
               size="lg"
               onClick={handleNext}
-              className=" invisible md:visible !absolute top-2/4 !right-14 -translate-y-2/4 bg-[#FFA500] hover:bg-orange-700"
+              className="invisible md:visible !absolute top-2/4 !right-14 -translate-y-2/4 bg-[#FFA500] hover:bg-orange-700"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -246,56 +350,22 @@ const Home = () => {
           )}
         >
           <img
-            src="/assets/images/index_deskorganizer.png"
-            alt=" desk organizer"
+            src="/assets/images/construction-site.png"
+            alt="construction site"
             className="h-full w-full object-cover"
           />
           <img
-            src="/assets/images/designformanufac.png"
-            alt=" design for manufacture"
+            src="/assets/images/plumbing-project.png"
+            alt="plumbing project"
             className="h-full w-full object-cover"
           />
         </Carousel>
       </div>
 
-      <div className="pb-2 pt-4 bg-white  w-full flex flex-col justify-center items-center border-y-[1px] border-black">
-        <h3 className=" text-2xl md:text-4xl font-semibold ">
-          Our Trusted Clients
-        </h3>
-        <div className=" px-6 md:px-6 my-2 grid grid-cols-4 gap-8 md:gap-32 items-center ">
-          <img
-            src="/assets/images/hifi-logo.jpeg"
-            alt="hifi-electric-logo"
-            className="object-contain w-20 md:w-40"
-          ></img>
-
-          <img
-            src="/assets/images/elleyes-logo.jpg"
-            alt="elleyes-logo "
-            className="object-contain w-20 md:w-40"
-          ></img>
-
-          <img
-            src="/assets/images/avon-logo.png"
-            alt="avon-logo"
-            className="object-contain w-20 md:w-40"
-          ></img>
-
-          <img
-            src="/assets/images/profile-solution-logo.png"
-            alt="profile-solutiom-logo"
-            className="object-contain w-20 md:w-40"
-          ></img>
-        </div>
-      </div>
-
+      {/* Contact Form Section */}
       <div className="w-full">
         <Contactform />
       </div>
-      {/* <div className="h-[20rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-5xl mx-auto w-full  items-start justify-start my-40">
-      <div className="text-3xl font-semibold mb-4">Our Services</div>
-      <Tabs tabs={tabs} />
-    </div> */}
     </div>
   );
 };

@@ -54,9 +54,9 @@ const Footer = () => {
           <a href="/" className="my-5 md:my-0">
             <div className="text-center">
               <img
-                src="/assets/images/ak-logo.png"
-                alt="AK-Logo"
-                className="w-20 mx-auto"
+                src="/assets/images/dc-logo.png"
+                alt="dc-logo"
+                className="w-30 mx-auto"
               />
               <p>
                 <span className="text-[#3A3E9A]">Eng</span>

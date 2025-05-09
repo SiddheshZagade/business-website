@@ -56,16 +56,14 @@ const Navbar = () => {
               <img
                 className="w-14"
                 alt="AK logo"
-                src="/assets/images/ak-logo.png"
+                src="/assets/images/dc-logo.png"
               ></img>
             </motion.span>
             <div
               className={`text-xs mt-2 ${
                 isHomePage && !isScrolled ? "text-white" : "text-black"
               }`}
-            >
-              Engineers
-            </div>
+            ></div>
           </Link>
 
           <div className="hidden md:flex items-center space-x-6 ">
